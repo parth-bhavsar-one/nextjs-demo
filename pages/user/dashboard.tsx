@@ -1,8 +1,6 @@
 import type { NextPage } from "next";
 import { Fragment, useEffect, useState } from "react";
 
-
-
 const Dashboard: NextPage = () => {
 	const [userData, setUserData] = useState({
 		id: "",
@@ -15,7 +13,7 @@ const Dashboard: NextPage = () => {
 		fetch("/api/users/dashboard?id=" + localStorage.getItem("userId"), {
 			method: "GET",
 			headers: {
-			  "Content-Type": "application/json",
+			  "Content-Type": "application/json"
 			}
 		  })
 			.then((res) => res.json())

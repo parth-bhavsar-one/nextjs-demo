@@ -17,13 +17,11 @@ const Signin: NextPage = () => {
 			password: yup.string().required("This field is required."),
 		}),
 		onSubmit: async (values) => {
-			console.log("Here");
 			await login(values);
 		},
 	});
 
 	const login = async (data: any) => {
-		console.log("Here 2");
 
 		fetch("/api/auth/login", {
 			method: "POST",
