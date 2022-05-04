@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "json-server --watch db.json --port 2096"
   },
   "dependencies": {
     "formik": "^2.2.9",
+    "json-server": "^0.17.0",
+    "jsonwebtoken": "^8.5.1",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",

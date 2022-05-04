@@ -1,8 +1,11 @@
 import type { NextPage } from "next";
 import * as yup from "yup";
 import { useFormik } from "formik";
+import { useRouter } from 'next/router'
 
 const Signin: NextPage = () => {
+
+	const router = useRouter()
 
 	const formik = useFormik({
 		initialValues: {
@@ -14,9 +17,36 @@ const Signin: NextPage = () => {
 			password: yup.string().required("This field is required."),
 		}),
 		onSubmit: async (values) => {
-			console.log("Loggedin successfully.", values);
+			console.log("Here");
+			await login(values);
 		},
 	});
+
+	const login = async (data: any) => {
+		console.log("Here 2");
+
+		fetch("/api/auth/login", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(data),
+		})
+			.then((res) => {
+				console.log(res)
+				return res.json();
+			})
+			.then((result) => {
+				console.log(result)
+				localStorage.setItem("token", result.token)
+				localStorage.setItem("userId", result.id)
+
+				router.push('/user/dashboard')
+			})
+			.catch((e) => {
+				console.log(e);
+			});
+	};
 
 	return (
 		<div className="font-sans antialiased bg-grey-lightest">
@@ -34,7 +64,7 @@ const Signin: NextPage = () => {
 									onChange={formik.handleChange}
 									value={formik.values.email}
 								/>
-                {formik.touched.email && formik.errors.email ? <span className="text-red-500 text-sm">{formik.errors.email}</span> : null}
+								{formik.touched.email && formik.errors.email ? <span className="text-red-500 text-sm">{formik.errors.email}</span> : null}
 							</div>
 							<div className="mb-4">
 								<label className="block text-grey-darker text-sm font-bold mb-2">Password</label>
