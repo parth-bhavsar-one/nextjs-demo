@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import * as yup from "yup";
-import Link from "next/link";
+import Homepage from "../../component/homepage";
 import Form from "../../component/form";
 import { useRouter } from "next/router";
 
@@ -36,12 +36,21 @@ const SignUp: NextPage = () => {
     Router.push({ pathname: "/auth/signin" });
   };
   return (
-    <Form
-      initialValues={initialValuesOfSignUp}
-      type="SignUp"
-      formSchema={signUpSchema}
-      onFormSubmit={submitSignUp}
-    />
+    <>
+      <div className="grid grid-cols-2 items-center h-screen">
+        <div className="flex justify-center">
+          <Homepage />
+        </div>
+        <div>
+          <Form
+            initialValues={initialValuesOfSignUp}
+            type="SignUp"
+            formSchema={signUpSchema}
+            onFormSubmit={submitSignUp}
+          />
+        </div>
+      </div>
+    </>
   );
 };
 

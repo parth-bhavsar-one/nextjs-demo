@@ -33,8 +33,8 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
       <div className="w-full bg-grey-lightest">
         <div className="container mx-auto py-8">
           <div className="w-5/6 lg:w-1/2 mx-auto bg-white rounded shadow">
-            <div className="py-4 px-8 flex font-bold text-xl border-b border-grey-lighter">
-              <div className="py-12 mx-auto"> {type}</div>
+            <div className="py-4 px-8 flex font-bold border-b border-grey-lighter">
+              <div className="py-12 mx-auto text-xl"> {type}</div>
             </div>
             <div className="py-4 px-8">
               {type === "SignUp" ? (
