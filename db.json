@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "test@gmail.com",
+      "password": "123456",
+      "dob": "2000-02-02",
+      "isVerified": false
+    },
+    {
+      "id": 2,
+      "email": "parth.bhavsar@theonetechnologies.co.in",
+      "password": "123456",
+      "dob": "1997-10-29",
+      "isVerified": true
+    },
+    {
+      "email": "test1@gmail.com",
+      "password": "123456",
+      "dob": "21-12-2021",
+      "isVerified": true,
+      "id": 3
+    },
+    {
+      "email": "test2@gmail.com",
+      "password": "123456",
+      "dob": "12-12-2000",
+      "isVerified": false,
+      "id": 4
+    },
+    {
+      "email": "test3@gmail.com",
+      "password": "123456",
+      "dob": "12-12-1997",
+      "isVerified": true,
+      "id": 5
+    }
+  ]
+}
