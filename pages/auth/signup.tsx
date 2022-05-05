@@ -11,6 +11,7 @@ interface InitialProps {
 }
 
 const SignUp: NextPage = () => {
+  const router = useRouter();
   const initialValuesOfSignUp: InitialProps = {
     fullName: "",
     email: "",
@@ -30,10 +31,29 @@ const SignUp: NextPage = () => {
         "Date of Birth must be a valid date in the format DD-MM-YYYY"
       ),
   });
-  const Router = useRouter();
-  const submitSignUp = () => {
-    console.log("Register successfully.");
-    Router.push({ pathname: "/auth/signin" });
+  
+  const submitSignUp = async(data:any) => {
+    console.log(data);
+    
+    // console.log("Register successfully.");
+    fetch("/api/auth/signup", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(data),
+		})
+			.then((res) => {
+				return res.json();
+			})
+			.then((result) => {
+				alert(result.message)
+				router.push("/auth/signin");
+			})
+			.catch((e) => {
+				console.log(e);
+			});
+    router.push({ pathname: "/auth/signin" });
   };
   return (
     <>

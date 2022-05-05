@@ -25,7 +25,7 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
     validationSchema: formSchema,
     onSubmit: async (values) => {
       onFormSubmit(values);
-      console.log(values);
+      
     },
   });
   return (
@@ -83,6 +83,7 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
                   <input
                     className="appearance-none border rounded w-full py-2 px-3 text-grey-darker"
                     name="password"
+                    type="password"
                     placeholder="Enter password"
                     onChange={formik.handleChange}
                     value={formik.values.password}
@@ -101,7 +102,8 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
                   </label>
                   <input
                     className="appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-                    name="newPassword"
+                    name="newPassword" 
+                    type="password"
                     placeholder="Enter new password"
                     onChange={formik.handleChange}
                     value={formik.values.newPassword}
