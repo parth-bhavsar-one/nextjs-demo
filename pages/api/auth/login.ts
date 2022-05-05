@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-const jwt = require('jsonwebtoken')
+import { generateToken } from '../../../utils/common'
+// const jwt = require('jsonwebtoken')
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
@@ -10,7 +11,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             let user = result[0]
 
             if (user.isVerified) {
-                const token = jwt.sign({ id: user.id, email: user.email }, "SECRET_KEY", { expiresIn: '7d' });
+                // const token = jwt.sign({ id: user.id, email: user.email }, "SECRET_KEY", { expiresIn: '7d' });
+                const token = generateToken({ id: user.id, email: user.email })
 
                 return res.status(200).json({
                     ...user,

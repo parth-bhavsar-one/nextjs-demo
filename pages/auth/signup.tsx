@@ -35,7 +35,7 @@ const SignUp: NextPage = () => {
 				return res.json();
 			})
 			.then((result) => {
-				alert("Please check your email to verify your account.")
+				alert(result.message)
 				router.push("/auth/signin");
 			})
 			.catch((e) => {

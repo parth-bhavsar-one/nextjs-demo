@@ -35,11 +35,15 @@ const Signin: NextPage = () => {
 				return res.json();
 			})
 			.then((result) => {
-				console.log(result)
-				localStorage.setItem("token", result.token)
-				localStorage.setItem("userId", result.id)
 
-				router.push('/user/dashboard')
+				if(result && result.token) {
+					localStorage.setItem("token", result.token)
+					localStorage.setItem("userId", result.id)
+					router.push('/user/dashboard')
+				} else {
+					alert(result.message)
+				}
+
 			})
 			.catch((e) => {
 				console.log(e);
