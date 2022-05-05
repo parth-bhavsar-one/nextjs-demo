@@ -27,9 +27,9 @@ const Signin: NextPage = () => {
   };
   return (
     <Form
-      initialValuesOfSignIn={initialValuesOfSignIn}
+      initialValues={initialValuesOfSignIn}
       type="SignIn"
-      signInSchema={signInSchema}
+      formSchema={signInSchema}
       onFormSubmit={handleButtonClick}
     />
   );

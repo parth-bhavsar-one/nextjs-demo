@@ -37,9 +37,9 @@ const SignUp: NextPage = () => {
   };
   return (
     <Form
-      initialValuesOfSignUp={initialValuesOfSignUp}
+      initialValues={initialValuesOfSignUp}
       type="SignUp"
-      signUpSchema={signUpSchema}
+      formSchema={signUpSchema}
       onFormSubmit={submitSignUp}
     />
   );

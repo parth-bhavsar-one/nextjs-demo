@@ -1,10 +1,11 @@
 import { useFormik, FormikProps } from "formik";
 import Link from "next/link";
 interface FormValues {
-  email: string;
-  password: string;
-  fullName: string;
-  dob: string;
+  email?: string;
+  password?: string;
+  fullName?: string;
+  dob?: string;
+  newPassword?: string;
 }
 
 interface OtherProps {
@@ -14,17 +15,14 @@ interface OtherProps {
 
 const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
   const {
-    initialValuesOfSignIn,
-    initialValuesOfSignUp,
+    initialValues,
     type,
-    signInSchema,
-    signUpSchema,
+    formSchema,
     onFormSubmit,
   } = props;
   const formik: any = useFormik({
-    initialValues:
-      type === "SignIn" ? initialValuesOfSignIn : initialValuesOfSignUp,
-    validationSchema: type === "SignIn" ? signInSchema : signUpSchema,
+    initialValues: initialValues,
+    validationSchema: formSchema,
     onSubmit: async (values) => {
       onFormSubmit(values);
       console.log(values);
@@ -58,24 +56,26 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
                   ) : null}
                 </div>
               ) : null}
-              <div className="mb-4">
-                <label className="block text-grey-darker text-sm font-bold mb-2">
-                  Email Address
-                </label>
-                <input
-                  className="appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-                  name="email"
-                  placeholder="Enter email"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
-                />
-                {formik.touched.email && formik.errors.email ? (
-                  <span className="text-red-500 text-sm">
-                    {formik.errors.email}
-                  </span>
-                ) : null}
-              </div>
-              {type === "SignIn" ? (
+              {type === "SignIn" || type === "SignUp" ? (
+                <div className="mb-4">
+                  <label className="block text-grey-darker text-sm font-bold mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    className="appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+                    name="email"
+                    placeholder="Enter email"
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                  />
+                  {formik.touched.email && formik.errors.email ? (
+                    <span className="text-red-500 text-sm">
+                      {formik.errors.email}
+                    </span>
+                  ) : null}
+                </div>
+              ) : null}
+              {type === "ResetPassword" || type === "SignIn"? (
                 <div className="mb-4">
                   <label className="block text-grey-darker text-sm font-bold mb-2">
                     Password
@@ -90,6 +90,25 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
                   {formik.touched.password && formik.errors.password ? (
                     <span className="text-red-500 text-sm">
                       {formik.errors.password}
+                    </span>
+                  ) : null}
+                </div>
+              ) : null}
+              {type === "ResetPassword" ? (
+                <div className="mb-4">
+                  <label className="block text-grey-darker text-sm font-bold mb-2">
+                    New Password
+                  </label>
+                  <input
+                    className="appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+                    name="newPassword"
+                    placeholder="Enter new password"
+                    onChange={formik.handleChange}
+                    value={formik.values.newPassword}
+                  />
+                  {formik.touched.newPassword && formik.errors.newPassword ? (
+                    <span className="text-red-500 text-sm">
+                      {formik.errors.newPassword}
                     </span>
                   ) : null}
                 </div>
@@ -123,22 +142,22 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
                       formik.handleSubmit();
                     }}
                   >
-                    {type === "SignIn" ? "Login" : "Register"}
+                    {type === "SignIn" ? "Login" : type === "ResetPassword" ? "Reset" : "Register"}
                   </button>
                 </div>
               </div>
-              <div className="flex mt-8 mx-10"  >
+              <div className="flex mt-8 mx-10">
                 <div className="flex items-center mx-auto">
                   {type === "SignIn" ? (
-                    <p style={{padding: "15px"}}>Do not have an account?</p>
-                  ) : (
-                    <p style={{padding: "15px"}}>Already have an account?</p>
-                  )}{' '}
+                    <p style={{ padding: "15px" }}>Do not have an account?</p>
+                  ) : type === "ResetPassword" ? null : (
+                    <p style={{ padding: "15px" }}>Already have an account?</p>
+                  )}
                   {type === "SignIn" ? (
                     <Link href="/auth/signup" className="btn btn-link">
-                        <a> SignUp Now</a>
+                      <a> SignUp Now</a>
                     </Link>
-                  ) : (
+                  ) : type  === "ResetPassword" ? null : (
                     <Link href="/auth/signin" className="btn btn-link">
                       <a href="#" className="btn btn-link">
                         Cancel
