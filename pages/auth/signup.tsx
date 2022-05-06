@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import * as yup from "yup";
+import yup from "yup";
 import { useFormik } from "formik";
 import { useRouter } from "next/router";
 
