@@ -1,15 +1,8 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import profile from "../component/assest/image.jpg"
 const HomePage: NextPage = () => {
   return (
-    <div>
-      <Image
-        src={profile}
-        alt="Picture of the author"
-        width={800}
-        height={750}
-      />
+    <div className="flex-1 bg-indigo-100 text-center hidden lg:flex">
+      <div className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"></div>
     </div>
   );
 };

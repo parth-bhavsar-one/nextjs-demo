@@ -3,7 +3,7 @@ import * as yup from "yup";
 import Homepage from "../../component/homepage";
 import Form from "../../component/form";
 import { useRouter } from "next/router";
-
+import { useState } from "react";
 interface InitialProps {
   fullName: string;
   email: string;
@@ -17,6 +17,7 @@ const SignUp: NextPage = () => {
     email: "",
     dob: "",
   };
+  const [customError, setCustomError] = useState({ message: "" });
   const signUpSchema = yup.object({
     fullName: yup.string().required("Full name is required."),
     email: yup
@@ -31,44 +32,37 @@ const SignUp: NextPage = () => {
         "Date of Birth must be a valid date in the format DD-MM-YYYY"
       ),
   });
-  
-  const submitSignUp = async(data:any) => {
-    console.log(data);
-    
-    // console.log("Register successfully.");
+
+  const submitSignUp = async (data: any) => {
     fetch("/api/auth/signup", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		})
-			.then((res) => {
-				return res.json();
-			})
-			.then((result) => {
-				alert(result.message)
-				router.push("/auth/signin");
-			})
-			.catch((e) => {
-				console.log(e);
-			});
-    router.push({ pathname: "/auth/signin" });
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((result) => {
+        alert(result.message);
+        router.push("/auth/signin");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
   return (
     <>
-      <div className="grid grid-cols-2 items-center h-screen">
-        <div className="flex justify-center">
-          <Homepage />
-        </div>
-        <div>
-          <Form
-            initialValues={initialValuesOfSignUp}
-            type="SignUp"
-            formSchema={signUpSchema}
-            onFormSubmit={submitSignUp}
-          />
-        </div>
+      <div className="m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+        <Homepage />
+        <Form
+          initialValues={initialValuesOfSignUp}
+          type="SignUp"
+          formSchema={signUpSchema}
+          onFormSubmit={submitSignUp}
+          customError={customError}
+        />
       </div>
     </>
   );

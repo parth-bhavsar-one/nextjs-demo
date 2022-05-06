@@ -1,75 +1,11 @@
 {
   "users": [
     {
+      "email": "vishal@gmail.com",
+      "password": "Test@1234",
+      "dob": "2022-05-10",
+      "isVerified": false,
       "id": 1
-    },
-    {
-      "id": 2,
-      "email": "parth.bhavsar@theonetechnologies.co.in",
-      "password": "123456",
-      "dob": "1997-10-29",
-      "isVerified": true
-    },
-    {
-      "email": "test1@gmail.com",
-      "password": "123456",
-      "dob": "21-12-2021",
-      "isVerified": true,
-      "id": 3
-    },
-    {
-      "email": "test2@gmail.com",
-      "password": "123456",
-      "dob": "12-12-2000",
-      "isVerified": false,
-      "id": 4
-    },
-    {
-      "email": "test3@gmail.com",
-      "password": "123456",
-      "dob": "12-12-1997",
-      "isVerified": true,
-      "id": 5
-    },
-    {
-      "email": "abcd@gmail.com",
-      "password": "123456",
-      "dob": 0.0004170837504170838,
-      "isVerified": false,
-      "id": 6
-    },
-    {
-      "email": "abcd@gmail.com",
-      "password": "123456",
-      "dob": 0.0004170837504170838,
-      "isVerified": false,
-      "id": 7
-    },
-    {
-      "email": "pd@gmail.com",
-      "password": "123456",
-      "dob": "1998-12-10",
-      "isVerified": false,
-      "id": 8
-    },
-    {
-      "password": "123456",
-      "isVerified": false,
-      "id": 9
-    },
-    {
-      "email": "pd@gmail.com",
-      "password": "123456",
-      "dob": "1999-02-12",
-      "isVerified": false,
-      "id": 10
-    },
-    {
-      "email": "abcdefg@gmail.com",
-      "password": "123456",
-      "dob": "1999-10-10",
-      "isVerified": false,
-      "id": 11
     }
   ]
 }

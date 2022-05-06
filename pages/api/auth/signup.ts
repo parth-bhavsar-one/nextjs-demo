@@ -5,7 +5,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     let user = {
         email: req.body.email,
-        password: "123456",
+        password: "Test@1234",
         // fullName: req.body.fullName,
         dob: req.body.dob,
         isVerified: false,
