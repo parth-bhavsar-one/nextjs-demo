@@ -1,11 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
-      "email": "test@gmail.com",
-      "password": "123456",
-      "dob": "2000-02-02",
-      "isVerified": true
+      "id": 1
     },
     {
       "id": 2,
@@ -67,6 +63,13 @@
       "dob": "1999-02-12",
       "isVerified": false,
       "id": 10
+    },
+    {
+      "email": "abcdefg@gmail.com",
+      "password": "123456",
+      "dob": "1999-10-10",
+      "isVerified": false,
+      "id": 11
     }
   ]
 }
