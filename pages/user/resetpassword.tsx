@@ -32,11 +32,11 @@ const ResetPassword: NextPage = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({data}),
+      body: JSON.stringify({data, id}),
     })
       .then((response) => response.json())
       .then((id) => {
-        console.log(data);
+        console.log(data, id);
       })
       .catch((error) => {
         console.error("Error:", error);
