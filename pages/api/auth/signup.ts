@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }).then(res => res.json()).then((result) => {
 
         let token = generateToken({id: result.id, email: user.email})
-        let URL = `http://localhost:3000/api/auth/verify?token=${token}`
+        let URL = `http://localhost:3000/user/auth/verify?token=${token}`
 
         res.status(200).json({message: "Please check your email to verify and activate your account."})
 

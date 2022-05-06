@@ -10,6 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         fetch(`http://localhost:2096/users/${req.body.id}`).then(res => res.json()).then((user) => {
 
+        console.log(user.id)
             fetch(`http://localhost:2096/users/${decoded.id}`, {
                 method: "PUT",
                 headers: {
