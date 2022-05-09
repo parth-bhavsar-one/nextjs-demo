@@ -17,11 +17,11 @@ const Signin: NextPage = () => {
       .email("Please enter a valid email")
       .required("Email is required."),
     // password: yup
-    //   .string()
-    //   .required("Password is required.")
-    //   .matches(
-    //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-    //     "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+    // .string()
+    // .required("Password is required.")
+    // .matches(
+    // /^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#\$%\^&\*])(?=.{8,})/,
+    // "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
     // ),
   });
   const handleButtonClick = async (data: any) => {
@@ -74,3 +74,4 @@ export default Signin;
 function data(data: any): BodyInit | null | undefined {
   throw new Error("Function not implemented.");
 }
+

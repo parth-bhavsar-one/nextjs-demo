@@ -1,21 +1,25 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import router from "next/router";
+import { useState } from "react";
 
 export default function Verify() {
   const [page, setPage] = useState((useRouter().query || 1).toString());
-  const router = useRouter();
-  const { token } = router.query;
-  console.log(token);
-  useEffect(() => {}, []);
+  const { query } = useRouter();
+  const token = query.token;
+  console.log(token, "token");
 
-  const onVerify = (data:any) => {
+  const onVerify = (data: any) => {
     fetch(`/api/auth/verify?token=${token}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        router.push("/auth/signin");
+        return res.json();
+      })
       .then((data) => {
         console.log(data);
       })

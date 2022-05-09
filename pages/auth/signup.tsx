@@ -34,7 +34,7 @@ const SignUp: NextPage = () => {
   
   const submitSignUp = async(data:any) => {
     console.log(data);
-    
+  
     // console.log("Register successfully.");
     fetch("/api/auth/signup", {
 			method: "POST",
@@ -48,6 +48,8 @@ const SignUp: NextPage = () => {
 			})
 			.then((result) => {
 				alert(result.message)
+        localStorage.setItem("token", result.token);
+        console.log(result.token);
 				router.push("/auth/signin");
 			})
 			.catch((e) => {
