@@ -3,6 +3,7 @@
 ## 1 Install Dependencies
 
 yarn # npm i
+npm i nodemailer
 
 ## 2  Start JSON Server
 
