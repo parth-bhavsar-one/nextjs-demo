@@ -79,7 +79,7 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
                 <input
                   className=" mt-4 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                   name="fullName"
-                  placeholder="Enter FullName"
+                  placeholder="Enter Name"
                   onChange={formik.handleChange}
                   value={formik.values.fullName}
                 />
@@ -95,7 +95,7 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
                 <input
                   className=" mt-4 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                   name="email"
-                  placeholder="Enter email"
+                  placeholder="Enter Email"
                   onChange={formik.handleChange}
                   value={formik.values.email}
                 />
@@ -112,7 +112,7 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
                   className="mt-4 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                   name="password"
                   type="password"
-                  placeholder="Enter password"
+                  placeholder="Enter Password"
                   onChange={formik.handleChange}
                   value={formik.values.password}
                 />
@@ -129,7 +129,7 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
                   className="mt-4 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                   name="newPassword"
                   type="password"
-                  placeholder="Enter new password"
+                  placeholder="Enter New Password"
                   onChange={formik.handleChange}
                   value={formik.values.newPassword}
                 />
@@ -146,7 +146,7 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
                   className="mt-4 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                   name="dob"
                   type="date"
-                  placeholder="Enter Date Of Birth"
+                  placeholder="date"
                   onChange={formik.handleChange}
                   value={formik.values.dob}
                 />
@@ -199,13 +199,13 @@ const Form: any = (props: any & OtherProps & FormikProps<FormValues>) => {
                 <p style={{ padding: "15px" }}>Already have an account?</p>
               )}
               {type === "SignIn" ? (
-                <Link href="/auth/signup" className="btn btn-link">
+                <Link href="/auth/signup" className="btn btn-link" style={{ padding: "15px" }}>
                   <a> SignUp Now</a>
                 </Link>
               ) : type === "ResetPassword" ? null : (
                 <Link href="/auth/signin" className="btn btn-link">
-                  <a href="#" className="btn btn-link">
-                    Cancel
+                  <a href="#" className="btn btn-link" style={{ padding: "15px" }}>
+                    SignIn
                   </a>
                 </Link>
               )}

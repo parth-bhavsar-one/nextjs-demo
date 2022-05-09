@@ -35,8 +35,6 @@ const SignUp: NextPage = () => {
   
   const submitSignUp = async(data:any) => {
     console.log(data);
-  
-    // console.log("Register successfully.");
     fetch("/api/auth/signup", {
 			method: "POST",
 			headers: {
