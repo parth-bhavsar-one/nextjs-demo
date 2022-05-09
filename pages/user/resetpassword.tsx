@@ -1,4 +1,6 @@
 import type { NextPage } from "next";
+import router from "next/router";
+import Router from "next/router";
 import * as yup from "yup";
 import Form from "../../component/form";
 import Homepage from "../../component/homepage";
@@ -25,20 +27,30 @@ const ResetPassword: NextPage = () => {
     //   "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
     // ),
   });
-  const handleResetClick = (data: any) => {
+  const handleResetClick = (data:any) => {
+    console.log(data)
+    let users = {
+      id: localStorage.getItem("userId"),
+      password: data.newPassword
+    }
+
     let token = localStorage.getItem("token");
     fetch(`/api/users/resetPassword?token=${token}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ data, id }),
+      body: JSON.stringify(users),
     })
-      .then((response) => response.json())
-      .then((id) => {
-        console.log(data, id);
+      .then((res) => {
+        return res.json();
+      })
+      .then(() => {
+        alert("your password has been reset successfully");
+        router.push("/auth/signin");
       })
       .catch((error) => {
+        alert("Something went wrong, Please try again")
         console.error("Error:", error);
       });
   };

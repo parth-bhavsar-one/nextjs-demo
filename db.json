@@ -1,11 +1,261 @@
 {
   "users": [
     {
-      "email": "vishal@gmail.com",
-      "password": "Test@1234",
-      "dob": "2022-05-10",
-      "isVerified": false,
+      "password": "1234",
       "id": 1
+    },
+    {
+      "id": 2,
+      "email": "parth.bhavsar@theonetechnologies.co.in",
+      "password": "123456",
+      "dob": "1997-10-29",
+      "isVerified": true
+    },
+    {
+      "email": "test1@gmail.com",
+      "password": "123456",
+      "dob": "21-12-2021",
+      "isVerified": true,
+      "id": 3
+    },
+    {
+      "email": "test2@gmail.com",
+      "password": "123456",
+      "dob": "12-12-2000",
+      "isVerified": true,
+      "id": 4
+    },
+    {
+      "email": "test3@gmail.com",
+      "password": "123456",
+      "dob": "12-12-1997",
+      "isVerified": true,
+      "id": 5
+    },
+    {
+      "email": "abcd@gmail.com",
+      "password": "123456",
+      "dob": 0.0004170837504170838,
+      "isVerified": true,
+      "id": 6
+    },
+    {
+      "email": "abcd@gmail.com",
+      "password": "123456",
+      "dob": 0.0004170837504170838,
+      "isVerified": true,
+      "id": 7
+    },
+    {
+      "password": "1234",
+      "id": 8
+    },
+    {
+      "password": "123456",
+      "isVerified": true,
+      "id": 9
+    },
+    {
+      "email": "pd@gmail.com",
+      "password": "123456",
+      "dob": "1999-02-12",
+      "isVerified": true,
+      "id": 10
+    },
+    {
+      "password": "1234",
+      "id": 11
+    },
+    {
+      "password": "123",
+      "id": 12
+    },
+    {
+      "password": "123",
+      "id": 13
+    },
+    {
+      "password": "1234",
+      "id": 14
+    },
+    {
+      "password": "123",
+      "id": 15
+    },
+    {
+      "email": "ha@gmail.com",
+      "password": "111111111",
+      "dob": "1999-02-11",
+      "isVerified": true,
+      "id": 16
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "123",
+      "dob": "2199-02-11",
+      "isVerified": true,
+      "id": 17
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "123456",
+      "dob": "1999-10-10",
+      "isVerified": false,
+      "id": 18
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "123456",
+      "dob": "1222-10-10",
+      "isVerified": false,
+      "id": 19
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "123456",
+      "dob": "1999-12-11",
+      "isVerified": false,
+      "id": 20
+    },
+    {
+      "email": "asd@gmail.com",
+      "password": "123456",
+      "dob": "1999-02-01",
+      "isVerified": false,
+      "id": 21
+    },
+    {
+      "email": "12@gmail.com",
+      "password": "123456",
+      "dob": "4589-12-10",
+      "isVerified": false,
+      "id": 22
+    },
+    {
+      "email": "admin@admin.com",
+      "password": "123456",
+      "dob": "2022-05-12",
+      "isVerified": true,
+      "id": 23
+    },
+    {
+      "email": "admin@admin.com",
+      "password": "123456",
+      "dob": "2022-05-13",
+      "isVerified": true,
+      "id": 24
+    },
+    {
+      "email": "doke@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-19",
+      "isVerified": false,
+      "id": 25
+    },
+    {
+      "email": "keto@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-02",
+      "isVerified": false,
+      "id": 26
+    },
+    {
+      "email": "doy@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-12",
+      "isVerified": false,
+      "id": 27
+    },
+    {
+      "email": "jone@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-11",
+      "isVerified": false,
+      "id": 28
+    },
+    {
+      "email": "ketan@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-19",
+      "isVerified": false,
+      "id": 29
+    },
+    {
+      "email": "ketan@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-14",
+      "isVerified": false,
+      "id": 30
+    },
+    {
+      "email": "ketan@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-06",
+      "isVerified": false,
+      "id": 31
+    },
+    {
+      "email": "ketan@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-25",
+      "isVerified": true,
+      "id": 32
+    },
+    {
+      "email": "doy@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-19",
+      "isVerified": true,
+      "id": 33
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-26",
+      "isVerified": true,
+      "id": 34
+    },
+    {
+      "email": "doy@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-17",
+      "isVerified": true,
+      "id": 35
+    },
+    {
+      "email": "stive@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-24",
+      "isVerified": true,
+      "id": 36
+    },
+    {
+      "email": "doye@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-31",
+      "isVerified": true,
+      "id": 37
+    },
+    {
+      "email": "jone@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-12",
+      "isVerified": true,
+      "id": 38
+    },
+    {
+      "email": "rob@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-26",
+      "isVerified": true,
+      "id": 39
+    },
+    {
+      "email": "stive@gmail.com",
+      "password": "123456",
+      "dob": "2022-05-20",
+      "isVerified": true,
+      "id": 40
     }
   ]
 }
