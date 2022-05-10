@@ -47,7 +47,7 @@ const SignUp: NextPage = () => {
 			})
 			.then((result) => {
 				alert(result.message)
-        localStorage.setItem("token", result.token);
+        sessionStorage.setItem("token", result.token);
         console.log(result.token);
 				router.push("/auth/signin");
 			})

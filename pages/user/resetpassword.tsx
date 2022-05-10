@@ -30,11 +30,11 @@ const ResetPassword: NextPage = () => {
   const handleResetClick = (data:any) => {
     console.log(data)
     let users = {
-      id: localStorage.getItem("userId"),
+      id: sessionStorage.getItem("userId"),
       password: data.newPassword
     }
 
-    let token = localStorage.getItem("token");
+    let token = sessionStorage.getItem("token");
     fetch(`/api/users/resetPassword?token=${token}`, {
       method: "PUT",
       headers: {

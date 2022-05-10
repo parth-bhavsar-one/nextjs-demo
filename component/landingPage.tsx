@@ -12,14 +12,14 @@ const NavBar: NextPage = () => {
   };
 
   const logout = () => {
-    localStorage.clear();
+    sessionStorage.clear();
     router.push("/auth/signin");
     setFlag(true);
   };
 
   
   useEffect(() => {
-    let token = localStorage.getItem("token");
+    let token = sessionStorage.getItem("token");
     if (token) {
       setFlag(false);
     } else {

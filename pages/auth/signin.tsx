@@ -39,8 +39,8 @@ const Signin: NextPage = () => {
       })
       .then((result) => {
         if (result && result.token) {
-          localStorage.setItem("token", result.token);
-          localStorage.setItem("userId", result.id);
+          sessionStorage.setItem("token", result.token);
+          sessionStorage.setItem("userId", result.id);
           router.push("/user/dashboard");
         } else {
           setCustomError({ message: result.message });

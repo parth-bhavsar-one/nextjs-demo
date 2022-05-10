@@ -1,10 +1,3 @@
-// import type { NextPage } from "next";
-// const Signin: NextPage = () => {
-// 	return <div>Dashboard</div>;
-// };
-
-// export default Signin;
-
 import type { NextPage } from "next";
 import router from "next/router";
 import { Fragment, useEffect, useState } from "react";
@@ -16,14 +9,15 @@ const Dashboard: NextPage = () => {
     dob: "",
   });
 
-	
 	useEffect(() => {
-	  let token = localStorage.getItem("token");
+	  let token = sessionStorage.getItem("token");
 	  if (!token) {
 		router.push("/auth/signin");
+    sessionStorage.clear();
 	  }
+
 	  else {
-		  fetch("/api/users/dashboard?id=" + localStorage.getItem("userId"), {
+		  fetch("/api/users/dashboard?id=" + sessionStorage.getItem("userId"), {
 			method: "GET",
 			headers: {
 			  "Content-Type": "application/json",
