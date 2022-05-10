@@ -9,8 +9,8 @@ const Dashboard: NextPage = () => {
     dob: "",
   });
 
-  let token = sessionStorage.getItem("token");
   useEffect(() => {
+    let token = sessionStorage.getItem("token");
     if (!token) {
       sessionStorage.clear();
       router.push("/auth/signin");
