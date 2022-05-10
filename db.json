@@ -17,6 +17,13 @@
       "dob": "21-12-2021",
       "isVerified": true,
       "id": 3
+    },
+    {
+      "email": "mansi.senjaliya@estatic-infotech.com",
+      "password": "Test@1234",
+      "dob": "2022-05-05",
+      "isVerified": true,
+      "id": 4
     }
   ]
 }

@@ -9,28 +9,26 @@ const Dashboard: NextPage = () => {
     dob: "",
   });
 
-	useEffect(() => {
-	  let token = sessionStorage.getItem("token");
-	  if (!token) {
-		router.push("/auth/signin");
-    sessionStorage.clear();
-	  }
-
-	  else {
-		  fetch("/api/users/dashboard?id=" + sessionStorage.getItem("userId"), {
-			method: "GET",
-			headers: {
-			  "Content-Type": "application/json",
-			},
-		  })
-			.then((res) => res.json())
-			.then((data) => {
-			  setUserData(data);
-			})
-			.catch((e) => {
-			  console.log(e);
-			});
-	  }
+  let token = sessionStorage.getItem("token");
+  useEffect(() => {
+    if (!token) {
+      sessionStorage.clear();
+      router.push("/auth/signin");
+    } else {
+      fetch("/api/users/dashboard?id=" + sessionStorage.getItem("userId"), {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setUserData(data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
   }, []);
 
   return (

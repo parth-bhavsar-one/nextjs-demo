@@ -6,8 +6,8 @@ let transporter = nodemailer.createTransport({
 //   port: 25,
   secure: false,
   auth: {
-    user: "Here enter your email address",
-    pass:"Here enter your password",
+    user: "mayurtheonetech2@gmail.com",
+    pass:"Mayur123$",
   },
 });
 
@@ -25,7 +25,7 @@ export const verifyEmail = (data: any) => {
         html = html.replace("@@URL@@", data.url)
 
         let mail = {
-          from: "Here enter your email address",
+          from:"mayurtheonetech2@gmail.com",
           to: data.email,
           subject: 'Verify your email',
           html: html,
@@ -58,7 +58,7 @@ export const accountActivated = (data: any) => {
           html = html.replace("@@URL@@", data.url)
 
           let mail = {
-            from: "Here enter your email address",
+            from: "mayurtheonetech2@gmail.com",
             to: data.email,
             subject: 'Verify your email',
             html: html,

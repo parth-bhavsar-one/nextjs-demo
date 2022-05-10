@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import router from "next/router";
-import Router from "next/router";
 import * as yup from "yup";
 import Form from "../../component/form";
 import Homepage from "../../component/homepage";
