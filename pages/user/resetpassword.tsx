@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import router from "next/router";
+import { useEffect } from "react";
 import * as yup from "yup";
 import Form from "../../component/form";
 import Homepage from "../../component/homepage";
@@ -15,23 +16,30 @@ const ResetPassword: NextPage = () => {
     newPassword: "",
   };
   const ResetPasswordSchema = yup.object({
-    password: yup.string().required("Password is required.")
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-    ),
-    newPassword: yup.string().required("New password is required.")
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-    ),
+    password: yup
+      .string()
+      .required("Password is required.")
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+      ),
+    newPassword: yup
+      .string()
+      .required("New password is required.")
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+      ),
   });
-  const handleResetClick = (data:any) => {
-    console.log(data)
+
+
+  const handleResetClick = (data: any) => {
+    console.log(data);
+
     let users = {
       id: sessionStorage.getItem("userId"),
-      password: data.newPassword
-    }
+      password: data.newPassword,
+    };
 
     let token = sessionStorage.getItem("token");
     fetch(`/api/users/resetPassword?token=${token}`, {
@@ -49,10 +57,31 @@ const ResetPassword: NextPage = () => {
         router.push("/auth/signin");
       })
       .catch((error) => {
-        alert("Something went wrong, Please try again")
+        alert("Something went wrong, Please try again");
         console.error("Error:", error);
       });
   };
+
+  useEffect(() => {
+    let token = sessionStorage.getItem("token");
+    if (!token) {
+      sessionStorage.clear();
+      router.push("/auth/signin");
+    } else {
+     fetch(`/user/resetpassword`,{})
+      .then((res) => {
+        return res.json();
+      })
+      .then(() => {
+        alert("your password has been reset successfully");
+        router.push("/auth/signin");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    }
+  });
+
   return (
     <div className="m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1">
       <Homepage />
